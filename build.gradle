@@ -61,4 +61,4 @@ publishing {
 
 apply from: 'check-copyright.gradle'
 
-wrapper.distributionType = Wrapper.DistributionType.ALL
+if (project == rootProject) wrapper.distributionType = Wrapper.DistributionType.ALL
