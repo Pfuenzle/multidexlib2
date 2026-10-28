@@ -10,10 +10,10 @@
 
 ext.configurePom = { pom ->
     pom.description = 'Android Dalvik bytecode patcher.'
-    pom.url = 'https://github.com/DexPatcher/dexpatcher-tool'
+    pom.url = 'https://github.com/Pfuenzle/multidexlib2'
     pom.organization {
-        name = 'DexPatcher'
-        url = 'https://dexpatcher.github.io/'
+        name = 'Pfuenzle'
+        url = 'https://github.com/Pfuenzle'
     }
     pom.licenses {
         license {
@@ -23,14 +23,14 @@ ext.configurePom = { pom ->
     }
     pom.developers {
         developer {
-            name = 'Lanchon'
-            url = 'https://github.com/Lanchon'
+            name = 'Pfuenzle'
+            url = 'https://github.com/Pfuenzle'
         }
     }
     pom.scm {
-        connection = 'scm:git:git://github.com/DexPatcher/dexpatcher-tool.git'
-        developerConnection = 'scm:git:ssh://github.com:DexPatcher/dexpatcher-tool.git'
-        url = 'https://github.com/DexPatcher/dexpatcher-tool'
+        connection = 'scm:git:git://github.com/Pfuenzle/multidexlib2.git'
+        developerConnection = 'scm:git:ssh://github.com:Pfuenzle/multidexlib2.git'
+        url = 'https://github.com/Pfuenzle/multidexlib2'
     }
 }
 

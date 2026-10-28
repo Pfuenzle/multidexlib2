@@ -1,10 +1,10 @@
-# multidexlib2
-### Multi-dex extensions for dexlib2.
+## multidexlib2
+### Multi-dex extensions for Google Smali dexlib2.
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.lanchon.dexpatcher/multidexlib2/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.lanchon.dexpatcher/multidexlib2)
-[![Build Status](https://travis-ci.org/DexPatcher/multidexlib2.svg?branch=master)](https://travis-ci.org/DexPatcher/multidexlib2)
-
-This is a free software (GPLv3+) library on top of [dexlib2](https://github.com/JesusFreke/smali/tree/master/dexlib2) that features:
+This is the Pfuenzle-maintained DexWeaver fork, updated to Google Smali 3.0.10
+(`com.android.tools.smali:smali-dexlib2`). ZIP DEX containers with entry names such as
+`classes.dex/0` and `classes.dex/1` are normalized to the configured `DexFileNamer`; standalone
+entries retain their original names.
 - Multi-dex reading and writing.
 - Optional management of the content of the main dex file when writing multi-dex.
 - Simplified read/write access to multi-dex containers as plain-old dexlib2 `DexFile` objects, making it trivial to add multi-dex support to existing non-multi-dex-aware dexlib2 clients.
@@ -20,16 +20,16 @@ Limitations:
 
 ### DISTRIBUTION
 
-Releases of multidexlib2 are distributed with coordinates `com.github.lanchon.dexpatcher:multidexlib2` through the [Maven Central Repository](https://search.maven.org/#search%7Cga%7C1%7Ccom.github.lanchon.dexpatcher.multidexlib2), with version numbers starting at `2.2.0` and matching the version of dexlib2 they were built against. Release changelog is available [here](https://github.com/DexPatcher/multidexlib2/releases).
+The workspace builds local Maven artifacts under `io.pfuenzle.dexweaver:multidexlib2:3.0.10.r3`.
 
 ### USAGE
 
 Interface:
-- [__MultiDexIO:__](https://github.com/DexPatcher/multidexlib2/blob/master/src/main/java/lanchon/multidexlib2/MultiDexIO.java) read and write potentially multi-dex containers.
-  - __readDexFile():__ read potentially multi-dex container and return a single, merged `DexFile`.
-  - __readMultiDexContainer():__ read potentially multi-dex container and return a `MultiDexContainer`.
-  - __writeDexFile():__ write potentially multi-dex container from a single `DexFile`.
-- [__RawDexIO:__](https://github.com/DexPatcher/multidexlib2/blob/master/src/main/java/lanchon/multidexlib2/RawDexIO.java) read and write single dex files (supersedes invoking dexlib2 directly).
+- [__MultiDexIO:__](https://github.com/Pfuenzle/multidexlib2/blob/master/src/main/java/lanchon/multidexlib2/MultiDexIO.java) reads and writes potentially multi-dex containers.
+  - __readDexFile():__ reads potentially multi-dex container and returns a merged `DexFile`.
+  - __readMultiDexContainer():__ reads potentially multi-dex container and returns a `MultiDexContainer`.
+  - __writeDexFile():__ writes potentially multi-dex container from a single `DexFile`.
+  - __RawDexIO:__ reads and writes single dex files.
 
 Parameters:
 - __boolean multiDex:__ `true` to enable multi-dex support.
@@ -46,4 +46,4 @@ Parameters:
 
 Sample:
 
-DexPatcher's [file processor](https://github.com/DexPatcher/dexpatcher-tool/blob/master/tool/src/main/java/lanchon/dexpatcher/Processor.java) is a simple yet production-quality client of multidexlib2.
+DexWeaver's source processor is a production client of this library.
